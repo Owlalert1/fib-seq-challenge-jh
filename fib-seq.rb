@@ -1,8 +1,10 @@
 require 'benchmark'
 
 def recursive_fib(n)
-  if (n===1) 
-    return [0, 1]
+  if (n==0) 
+    return [0]
+  elsif (n==1)
+    return [1]
   else 
     s = recursive_fib(n - 1)
     s.push(s[s.length - 1] + s[s.length - 2])
@@ -10,8 +12,7 @@ def recursive_fib(n)
   end
 end
 
-
-puts recursive_fib(35)
+puts recursive_fib(35).last
 
 def iterative_fib(n)
   arr = [0, 1]
